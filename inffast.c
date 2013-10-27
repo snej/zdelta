@@ -135,7 +135,11 @@ zd_streamp z;
 		  best_ptr = (Byte)t->base;  /* get reference pointer      */
 
 		  /* jump to the beginning of the copy */
-		  ptr = rwptr[best_ptr] + (sign == ZD_PLUS ? d : -d);   
+                  if(ZD_PLUS == sign) {
+                    ptr = rwptr[best_ptr] + d;
+                  } else {
+                    ptr = rwptr[best_ptr] - d;
+                  }
 
 		  /* do the copy */
 		  memcpy(q,z->base[best_ptr/2]+ptr,c);

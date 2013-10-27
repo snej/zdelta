@@ -253,8 +253,12 @@ int inflate_codes(s, z, r)
       best_ptr = t->base;                /* get reference pointer */
       c->rw    = best_ptr/2;
       c->sign  = (c->len>>8) & ZD_MINUS; /* get the sign          */
-      /* jump to the beginning of the match */  
-      c->bp = rwptr[best_ptr] + (c->sign == ZD_PLUS ? c->dist : -c->dist); 
+      /* jump to the beginning of the match */
+      if (c->sign == ZD_PLUS) {
+        c->bp = rwptr[best_ptr] + c->dist;
+      } else {
+        c->bp = rwptr[best_ptr] - c->dist;
+      }
       c->len  &= (REFMATCH-1);           /* normalize the length  */
       if(c->dist > ZD_FAR){              /* updated base pointers */
 	if(s->stable[best_ptr])
