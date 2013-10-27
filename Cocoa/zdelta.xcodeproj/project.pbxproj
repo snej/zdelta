@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27BDA862181CF95200F27A11 /* _zdu.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA844181CF95200F27A11 /* _zdu.c */; };
+		27BDA863181CF95200F27A11 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA845181CF95200F27A11 /* adler32.c */; };
+		27BDA864181CF95200F27A11 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA846181CF95200F27A11 /* deflate.c */; };
+		27BDA865181CF95200F27A11 /* deflate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA847181CF95200F27A11 /* deflate.h */; };
+		27BDA866181CF95200F27A11 /* infblock.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA848181CF95200F27A11 /* infblock.c */; };
+		27BDA867181CF95200F27A11 /* infblock.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA849181CF95200F27A11 /* infblock.h */; };
+		27BDA868181CF95200F27A11 /* infcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA84A181CF95200F27A11 /* infcodes.c */; };
+		27BDA869181CF95200F27A11 /* infcodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA84B181CF95200F27A11 /* infcodes.h */; };
+		27BDA86A181CF95200F27A11 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA84C181CF95200F27A11 /* inffast.c */; };
+		27BDA86B181CF95200F27A11 /* inffast.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA84D181CF95200F27A11 /* inffast.h */; };
+		27BDA86C181CF95200F27A11 /* inffixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA84E181CF95200F27A11 /* inffixed.h */; };
+		27BDA86D181CF95200F27A11 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA84F181CF95200F27A11 /* inflate.c */; };
+		27BDA86E181CF95200F27A11 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA850181CF95200F27A11 /* inftrees.c */; };
+		27BDA86F181CF95200F27A11 /* inftrees.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA851181CF95200F27A11 /* inftrees.h */; };
+		27BDA870181CF95200F27A11 /* infutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA852181CF95200F27A11 /* infutil.c */; };
+		27BDA871181CF95200F27A11 /* infutil.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA853181CF95200F27A11 /* infutil.h */; };
+		27BDA873181CF95200F27A11 /* tailor.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA855181CF95200F27A11 /* tailor.h */; };
+		27BDA874181CF95200F27A11 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA856181CF95200F27A11 /* trees.c */; };
+		27BDA875181CF95200F27A11 /* trees.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA857181CF95200F27A11 /* trees.h */; };
+		27BDA876181CF95200F27A11 /* zd_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA858181CF95200F27A11 /* zd_mem.c */; };
+		27BDA877181CF95200F27A11 /* zd_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA859181CF95200F27A11 /* zd_mem.h */; };
+		27BDA879181CF95200F27A11 /* zdconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA85B181CF95200F27A11 /* zdconf.h */; };
+		27BDA87A181CF95200F27A11 /* zdelta.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA85C181CF95200F27A11 /* zdelta.c */; };
+		27BDA87B181CF95200F27A11 /* zdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA85D181CF95200F27A11 /* zdlib.h */; };
+		27BDA87D181CF95200F27A11 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA85F181CF95200F27A11 /* zutil.c */; };
+		27BDA87E181CF95200F27A11 /* zutil.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA860181CF95200F27A11 /* zutil.h */; };
+		27BDA891181CFA7600F27A11 /* zdc.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA880181CFA2C00F27A11 /* zdc.c */; };
+		27BDA892181CFA7D00F27A11 /* libzdelta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BDA83B181CF83400F27A11 /* libzdelta.a */; };
+		27BDA899181CFA9300F27A11 /* libzdelta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BDA83B181CF83400F27A11 /* libzdelta.a */; };
+		27BDA89F181CFA9F00F27A11 /* zdu.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA881181CFA2C00F27A11 /* zdu.c */; };
+		27BDA8A3181CFBE400F27A11 /* NSData+zdelta.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA8A1181CFBE400F27A11 /* NSData+zdelta.h */; };
+		27BDA8A4181CFBE400F27A11 /* NSData+zdelta.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA8A2181CFBE400F27A11 /* NSData+zdelta.m */; };
+		27E6591D181D8E400039BDB5 /* zdelta+blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 27E6591C181D8E400039BDB5 /* zdelta+blocks.c */; };
+		27E65926181DA4690039BDB5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E65925181DA4690039BDB5 /* XCTest.framework */; };
+		27E6592E181DA4690039BDB5 /* zdelta_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E6592D181DA4690039BDB5 /* zdelta_Tests.m */; };
+		27E65935181DA6640039BDB5 /* libzdelta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BDA83B181CF83400F27A11 /* libzdelta.a */; };
+		27E65937181DA9F10039BDB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E65936181DA9F10039BDB5 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27BDA88F181CFA7000F27A11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BDA833181CF83400F27A11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BDA83A181CF83400F27A11;
+			remoteInfo = zdelta;
+		};
+		27BDA895181CFA9300F27A11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BDA833181CF83400F27A11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BDA83A181CF83400F27A11;
+			remoteInfo = zdelta;
+		};
+		27E65930181DA4690039BDB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BDA833181CF83400F27A11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BDA83A181CF83400F27A11;
+			remoteInfo = zdelta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27BDA884181CFA4F00F27A11 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		27BDA89A181CFA9300F27A11 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		27BDA83B181CF83400F27A11 /* libzdelta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzdelta.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDA844181CF95200F27A11 /* _zdu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = _zdu.c; sourceTree = "<group>"; };
+		27BDA845181CF95200F27A11 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
+		27BDA846181CF95200F27A11 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		27BDA847181CF95200F27A11 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		27BDA848181CF95200F27A11 /* infblock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infblock.c; sourceTree = "<group>"; };
+		27BDA849181CF95200F27A11 /* infblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infblock.h; sourceTree = "<group>"; };
+		27BDA84A181CF95200F27A11 /* infcodes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infcodes.c; sourceTree = "<group>"; };
+		27BDA84B181CF95200F27A11 /* infcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infcodes.h; sourceTree = "<group>"; };
+		27BDA84C181CF95200F27A11 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
+		27BDA84D181CF95200F27A11 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffast.h; sourceTree = "<group>"; };
+		27BDA84E181CF95200F27A11 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffixed.h; sourceTree = "<group>"; };
+		27BDA84F181CF95200F27A11 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
+		27BDA850181CF95200F27A11 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
+		27BDA851181CF95200F27A11 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inftrees.h; sourceTree = "<group>"; };
+		27BDA852181CF95200F27A11 /* infutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infutil.c; sourceTree = "<group>"; };
+		27BDA853181CF95200F27A11 /* infutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infutil.h; sourceTree = "<group>"; };
+		27BDA855181CF95200F27A11 /* tailor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tailor.h; sourceTree = "<group>"; };
+		27BDA856181CF95200F27A11 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		27BDA857181CF95200F27A11 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		27BDA858181CF95200F27A11 /* zd_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zd_mem.c; sourceTree = "<group>"; };
+		27BDA859181CF95200F27A11 /* zd_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zd_mem.h; sourceTree = "<group>"; };
+		27BDA85B181CF95200F27A11 /* zdconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zdconf.h; sourceTree = "<group>"; };
+		27BDA85C181CF95200F27A11 /* zdelta.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zdelta.c; sourceTree = "<group>"; };
+		27BDA85D181CF95200F27A11 /* zdlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zdlib.h; sourceTree = "<group>"; };
+		27BDA85F181CF95200F27A11 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		27BDA860181CF95200F27A11 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		27BDA880181CFA2C00F27A11 /* zdc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zdc.c; sourceTree = "<group>"; };
+		27BDA881181CFA2C00F27A11 /* zdu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zdu.c; sourceTree = "<group>"; };
+		27BDA886181CFA4F00F27A11 /* zdc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zdc; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDA89E181CFA9300F27A11 /* zdu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zdu; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDA8A1181CFBE400F27A11 /* NSData+zdelta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+zdelta.h"; sourceTree = "<group>"; };
+		27BDA8A2181CFBE400F27A11 /* NSData+zdelta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+zdelta.m"; sourceTree = "<group>"; };
+		27BDA8A5181CFCE500F27A11 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		27E6591C181D8E400039BDB5 /* zdelta+blocks.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; path = "zdelta+blocks.c"; sourceTree = "<group>"; };
+		27E6591E181D8F2E0039BDB5 /* zdelta+blocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zdelta+blocks.h"; sourceTree = "<group>"; };
+		27E65923181DA4690039BDB5 /* zdelta Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zdelta Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E65925181DA4690039BDB5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		27E65929181DA4690039BDB5 /* zdelta Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "zdelta Tests-Info.plist"; sourceTree = "<group>"; };
+		27E6592D181DA4690039BDB5 /* zdelta_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zdelta_Tests.m; sourceTree = "<group>"; };
+		27E65936181DA9F10039BDB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27BDA838181CF83400F27A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BDA883181CFA4F00F27A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BDA892181CFA7D00F27A11 /* libzdelta.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BDA898181CFA9300F27A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BDA899181CFA9300F27A11 /* libzdelta.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E65920181DA4690039BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E65937181DA9F10039BDB5 /* Security.framework in Frameworks */,
+				27E65935181DA6640039BDB5 /* libzdelta.a in Frameworks */,
+				27E65926181DA4690039BDB5 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27BDA832181CF83400F27A11 = {
+			isa = PBXGroup;
+			children = (
+				27BDA8A0181CFBB900F27A11 /* Cocoa API */,
+				27E65938181DB6820039BDB5 /* blocks */,
+				27BDA842181CF8D600F27A11 /* source */,
+				27BDA87F181CFA0A00F27A11 /* tools */,
+				27E65927181DA4690039BDB5 /* Cocoa Tests */,
+				27E65924181DA4690039BDB5 /* Frameworks */,
+				27BDA83C181CF83400F27A11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27BDA83C181CF83400F27A11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27BDA83B181CF83400F27A11 /* libzdelta.a */,
+				27BDA886181CFA4F00F27A11 /* zdc */,
+				27BDA89E181CFA9300F27A11 /* zdu */,
+				27E65923181DA4690039BDB5 /* zdelta Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27BDA842181CF8D600F27A11 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				27BDA8A5181CFCE500F27A11 /* README */,
+				27BDA844181CF95200F27A11 /* _zdu.c */,
+				27BDA845181CF95200F27A11 /* adler32.c */,
+				27BDA846181CF95200F27A11 /* deflate.c */,
+				27BDA847181CF95200F27A11 /* deflate.h */,
+				27BDA848181CF95200F27A11 /* infblock.c */,
+				27BDA849181CF95200F27A11 /* infblock.h */,
+				27BDA84A181CF95200F27A11 /* infcodes.c */,
+				27BDA84B181CF95200F27A11 /* infcodes.h */,
+				27BDA84C181CF95200F27A11 /* inffast.c */,
+				27BDA84D181CF95200F27A11 /* inffast.h */,
+				27BDA84E181CF95200F27A11 /* inffixed.h */,
+				27BDA84F181CF95200F27A11 /* inflate.c */,
+				27BDA850181CF95200F27A11 /* inftrees.c */,
+				27BDA851181CF95200F27A11 /* inftrees.h */,
+				27BDA852181CF95200F27A11 /* infutil.c */,
+				27BDA853181CF95200F27A11 /* infutil.h */,
+				27BDA855181CF95200F27A11 /* tailor.h */,
+				27BDA856181CF95200F27A11 /* trees.c */,
+				27BDA857181CF95200F27A11 /* trees.h */,
+				27BDA858181CF95200F27A11 /* zd_mem.c */,
+				27BDA859181CF95200F27A11 /* zd_mem.h */,
+				27BDA85B181CF95200F27A11 /* zdconf.h */,
+				27BDA85C181CF95200F27A11 /* zdelta.c */,
+				27BDA85D181CF95200F27A11 /* zdlib.h */,
+				27BDA85F181CF95200F27A11 /* zutil.c */,
+				27BDA860181CF95200F27A11 /* zutil.h */,
+			);
+			name = source;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		27BDA87F181CFA0A00F27A11 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				27BDA880181CFA2C00F27A11 /* zdc.c */,
+				27BDA881181CFA2C00F27A11 /* zdu.c */,
+			);
+			name = tools;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		27BDA8A0181CFBB900F27A11 /* Cocoa API */ = {
+			isa = PBXGroup;
+			children = (
+				27BDA8A1181CFBE400F27A11 /* NSData+zdelta.h */,
+				27BDA8A2181CFBE400F27A11 /* NSData+zdelta.m */,
+			);
+			name = "Cocoa API";
+			sourceTree = "<group>";
+		};
+		27E65924181DA4690039BDB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27E65936181DA9F10039BDB5 /* Security.framework */,
+				27E65925181DA4690039BDB5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27E65927181DA4690039BDB5 /* Cocoa Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27E6592D181DA4690039BDB5 /* zdelta_Tests.m */,
+				27E65929181DA4690039BDB5 /* zdelta Tests-Info.plist */,
+			);
+			name = "Cocoa Tests";
+			path = "zdelta Tests";
+			sourceTree = "<group>";
+		};
+		27E65938181DB6820039BDB5 /* blocks */ = {
+			isa = PBXGroup;
+			children = (
+				27E6591C181D8E400039BDB5 /* zdelta+blocks.c */,
+				27E6591E181D8F2E0039BDB5 /* zdelta+blocks.h */,
+			);
+			name = blocks;
+			path = ../blocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		27BDA839181CF83400F27A11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BDA86C181CF95200F27A11 /* inffixed.h in Headers */,
+				27BDA873181CF95200F27A11 /* tailor.h in Headers */,
+				27BDA867181CF95200F27A11 /* infblock.h in Headers */,
+				27BDA875181CF95200F27A11 /* trees.h in Headers */,
+				27BDA865181CF95200F27A11 /* deflate.h in Headers */,
+				27BDA8A3181CFBE400F27A11 /* NSData+zdelta.h in Headers */,
+				27BDA86B181CF95200F27A11 /* inffast.h in Headers */,
+				27BDA87B181CF95200F27A11 /* zdlib.h in Headers */,
+				27BDA87E181CF95200F27A11 /* zutil.h in Headers */,
+				27BDA86F181CF95200F27A11 /* inftrees.h in Headers */,
+				27BDA871181CF95200F27A11 /* infutil.h in Headers */,
+				27BDA879181CF95200F27A11 /* zdconf.h in Headers */,
+				27BDA877181CF95200F27A11 /* zd_mem.h in Headers */,
+				27BDA869181CF95200F27A11 /* infcodes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		27BDA83A181CF83400F27A11 /* zdelta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BDA83F181CF83400F27A11 /* Build configuration list for PBXNativeTarget "zdelta" */;
+			buildPhases = (
+				27BDA837181CF83400F27A11 /* Sources */,
+				27BDA838181CF83400F27A11 /* Frameworks */,
+				27BDA839181CF83400F27A11 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zdelta;
+			productName = zdelta;
+			productReference = 27BDA83B181CF83400F27A11 /* libzdelta.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		27BDA885181CFA4F00F27A11 /* zdc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BDA88C181CFA4F00F27A11 /* Build configuration list for PBXNativeTarget "zdc" */;
+			buildPhases = (
+				27BDA882181CFA4F00F27A11 /* Sources */,
+				27BDA883181CFA4F00F27A11 /* Frameworks */,
+				27BDA884181CFA4F00F27A11 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BDA890181CFA7000F27A11 /* PBXTargetDependency */,
+			);
+			name = zdc;
+			productName = zdc;
+			productReference = 27BDA886181CFA4F00F27A11 /* zdc */;
+			productType = "com.apple.product-type.tool";
+		};
+		27BDA893181CFA9300F27A11 /* zdu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BDA89B181CFA9300F27A11 /* Build configuration list for PBXNativeTarget "zdu" */;
+			buildPhases = (
+				27BDA896181CFA9300F27A11 /* Sources */,
+				27BDA898181CFA9300F27A11 /* Frameworks */,
+				27BDA89A181CFA9300F27A11 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BDA894181CFA9300F27A11 /* PBXTargetDependency */,
+			);
+			name = zdu;
+			productName = zdc;
+			productReference = 27BDA89E181CFA9300F27A11 /* zdu */;
+			productType = "com.apple.product-type.tool";
+		};
+		27E65922181DA4690039BDB5 /* zdelta Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27E65932181DA4690039BDB5 /* Build configuration list for PBXNativeTarget "zdelta Tests" */;
+			buildPhases = (
+				27E6591F181DA4690039BDB5 /* Sources */,
+				27E65920181DA4690039BDB5 /* Frameworks */,
+				27E65921181DA4690039BDB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27E65931181DA4690039BDB5 /* PBXTargetDependency */,
+			);
+			name = "zdelta Tests";
+			productName = "zdelta Tests";
+			productReference = 27E65923181DA4690039BDB5 /* zdelta Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27BDA833181CF83400F27A11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = zdelta;
+				TargetAttributes = {
+					27E65922181DA4690039BDB5 = {
+						TestTargetID = 27BDA83A181CF83400F27A11;
+					};
+				};
+			};
+			buildConfigurationList = 27BDA836181CF83400F27A11 /* Build configuration list for PBXProject "zdelta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27BDA832181CF83400F27A11;
+			productRefGroup = 27BDA83C181CF83400F27A11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27BDA83A181CF83400F27A11 /* zdelta */,
+				27BDA885181CFA4F00F27A11 /* zdc */,
+				27BDA893181CFA9300F27A11 /* zdu */,
+				27E65922181DA4690039BDB5 /* zdelta Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27E65921181DA4690039BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27BDA837181CF83400F27A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E6591D181D8E400039BDB5 /* zdelta+blocks.c in Sources */,
+				27BDA866181CF95200F27A11 /* infblock.c in Sources */,
+				27BDA870181CF95200F27A11 /* infutil.c in Sources */,
+				27BDA874181CF95200F27A11 /* trees.c in Sources */,
+				27BDA862181CF95200F27A11 /* _zdu.c in Sources */,
+				27BDA863181CF95200F27A11 /* adler32.c in Sources */,
+				27BDA86A181CF95200F27A11 /* inffast.c in Sources */,
+				27BDA876181CF95200F27A11 /* zd_mem.c in Sources */,
+				27BDA86D181CF95200F27A11 /* inflate.c in Sources */,
+				27BDA8A4181CFBE400F27A11 /* NSData+zdelta.m in Sources */,
+				27BDA86E181CF95200F27A11 /* inftrees.c in Sources */,
+				27BDA868181CF95200F27A11 /* infcodes.c in Sources */,
+				27BDA87D181CF95200F27A11 /* zutil.c in Sources */,
+				27BDA87A181CF95200F27A11 /* zdelta.c in Sources */,
+				27BDA864181CF95200F27A11 /* deflate.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BDA882181CFA4F00F27A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BDA891181CFA7600F27A11 /* zdc.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BDA896181CFA9300F27A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BDA89F181CFA9F00F27A11 /* zdu.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E6591F181DA4690039BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E6592E181DA4690039BDB5 /* zdelta_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27BDA890181CFA7000F27A11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BDA83A181CF83400F27A11 /* zdelta */;
+			targetProxy = 27BDA88F181CFA7000F27A11 /* PBXContainerItemProxy */;
+		};
+		27BDA894181CFA9300F27A11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BDA83A181CF83400F27A11 /* zdelta */;
+			targetProxy = 27BDA895181CFA9300F27A11 /* PBXContainerItemProxy */;
+		};
+		27E65931181DA4690039BDB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BDA83A181CF83400F27A11 /* zdelta */;
+			targetProxy = 27E65930181DA4690039BDB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27BDA83D181CF83400F27A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27BDA83E181CF83400F27A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		27BDA840181CF83400F27A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27BDA841181CF83400F27A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27BDA88D181CFA4F00F27A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27BDA88E181CFA4F00F27A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27BDA89C181CFA9300F27A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = zdu;
+			};
+			name = Debug;
+		};
+		27BDA89D181CFA9300F27A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = zdu;
+			};
+			name = Release;
+		};
+		27E65933181DA4690039BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "zdelta Tests/zdelta Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		27E65934181DA4690039BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "zdelta Tests/zdelta Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27BDA836181CF83400F27A11 /* Build configuration list for PBXProject "zdelta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BDA83D181CF83400F27A11 /* Debug */,
+				27BDA83E181CF83400F27A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BDA83F181CF83400F27A11 /* Build configuration list for PBXNativeTarget "zdelta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BDA840181CF83400F27A11 /* Debug */,
+				27BDA841181CF83400F27A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BDA88C181CFA4F00F27A11 /* Build configuration list for PBXNativeTarget "zdc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BDA88D181CFA4F00F27A11 /* Debug */,
+				27BDA88E181CFA4F00F27A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BDA89B181CFA9300F27A11 /* Build configuration list for PBXNativeTarget "zdu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BDA89C181CFA9300F27A11 /* Debug */,
+				27BDA89D181CFA9300F27A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27E65932181DA4690039BDB5 /* Build configuration list for PBXNativeTarget "zdelta Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E65933181DA4690039BDB5 /* Debug */,
+				27E65934181DA4690039BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27BDA833181CF83400F27A11 /* Project object */;
+}
