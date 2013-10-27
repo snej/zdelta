@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 /** Output block for writing delta or target data. Return NO to stop the process. */
-typedef BOOL (^ZDOutputBlock)(const void* bytes, size_t length);
+typedef BOOL (^ZDeltaOutputBlock)(const void* bytes, size_t length);
 
 
 @interface NSData (zdelta)
@@ -24,7 +24,7 @@ typedef BOOL (^ZDOutputBlock)(const void* bytes, size_t length);
 /** Incremental delta generator. As the delta data is produced, the `onOutput` block is called
     with the bytes, which the caller is responsible for concatenating. */
 - (BOOL) zd_deltaTo: (NSData*)targetData
-           onOutput: (ZDOutputBlock)outputBlock;
+           onOutput: (ZDeltaOutputBlock)outputBlock;
 
 
 /** Applies a delta to source data (self), returning the target data. */
@@ -33,6 +33,15 @@ typedef BOOL (^ZDOutputBlock)(const void* bytes, size_t length);
 /** Incremental delta applicator. As the target data is produced, the `onOutput` block is called
     with the bytes, which the caller is responsible for concatenating. */
 - (BOOL) zd_applyDelta: (NSData*)delta
-              onOutput: (ZDOutputBlock)outputBlock;
+              onOutput: (ZDeltaOutputBlock)outputBlock;
+
+/** Computes the 32-bit Adler checksum of the data. According to the zlib documentation,
+    "An Adler-32 checksum is almost as reliable as a CRC32 but can be computed much faster."
+    It's also much faster (and much smaller) than a SHA digest; but it's not safe against deliberate
+    collision attacks, so it should never be used for security or cryptographc purposes.
+    It's useful to send a checksum of the source along with a delta, so the recipient can verify
+    that the source they have is the same as the one you generated the delta from; otherwise the
+    target they create will be garbage. */
+@property (readonly) UInt32 zd_adlerChecksum;
 
 @end

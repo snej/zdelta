@@ -39,7 +39,7 @@
 
 
 - (BOOL) zd_deltaTo: (NSData*)targetData
-           onOutput: (ZDOutputBlock)outputBlock
+           onOutput: (ZDeltaOutputBlock)outputBlock
 {
     NSParameterAssert(targetData != nil);
     NSParameterAssert(outputBlock != nil);
@@ -53,7 +53,7 @@
 }
 
 - (BOOL) zd_applyDelta: (NSData*)delta
-              onOutput: (ZDOutputBlock)outputBlock
+              onOutput: (ZDeltaOutputBlock)outputBlock
 {
     NSParameterAssert(delta != nil);
     NSParameterAssert(outputBlock != nil);
@@ -64,6 +64,12 @@
                                     },
                                     delta.bytes, delta.length);
     return (status == ZD_OK);
+}
+
+- (UInt32) zd_adlerChecksum {
+    // http://cis.poly.edu/zdelta/manual.shtml#Checksum%20functions
+    uLong adler = zd_adler32(0L, ZD_NULL, 0);
+    return zd_adler32(adler, self.bytes, self.length);
 }
 
 

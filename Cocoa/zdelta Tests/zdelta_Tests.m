@@ -109,4 +109,13 @@ static NSData* randomData(size_t length) {
     XCTAssertEqualObjects(target2, target, @"Applying delta gave wrong incremental result");
 }
 
+- (void) testAdler {
+    UInt32 sourceChecksum = _source.zd_adlerChecksum;
+    UInt32 targetChecksum = _target.zd_adlerChecksum;
+    NSLog(@"Source checksum = %08X", sourceChecksum);
+    NSLog(@"Target checksum = %08X", targetChecksum);
+    XCTAssertNotEqual(sourceChecksum, targetChecksum, @"Checksums shouldn't match");
+    // (I guess theoretically there is a tiny chance they could match...)
+}
+
 @end
