@@ -66,7 +66,7 @@ extern "C" {
 #error: incorrect REFNUM value 
 #endif 
 
-#define ZDLIB_VERSION "2.1"
+#define ZDLIB_VERSION "2.1.1"
 /* current libzd version */
 
 /* 
