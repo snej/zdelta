@@ -21,16 +21,19 @@ static NSData* randomData(size_t length) {
 
 @implementation zdelta_Tests
 {
+    NSString* _sourcePath, *_targetPath;
     NSData *_source, *_target;
 }
 
 - (void)setUp
 {
     [super setUp];
-    _source = [NSData dataWithContentsOfFile: @"../zdu.c"];
-    XCTAssertNotNil(_source, @"Couldn't read zdu.c");
-    _target = [NSData dataWithContentsOfFile: @"../_zdu.c"];
-    XCTAssertNotNil(_target, @"Couldn't read _zdu.c");
+    _sourcePath = [[NSBundle bundleForClass: [self class]] pathForResource: @"README" ofType: @""];
+    XCTAssertNotNil(_sourcePath, @"Couldn't read README");
+    _source = [NSData dataWithContentsOfFile: _sourcePath];
+    _targetPath = [[NSBundle bundleForClass: [self class]] pathForResource: @"README" ofType: @"md"];
+    XCTAssertNotNil(_targetPath, @"Couldn't read README.md");
+    _target = [NSData dataWithContentsOfFile: _targetPath];
 }
 
 - (void)tearDown
@@ -107,6 +110,18 @@ static NSData* randomData(size_t length) {
         return YES;
     }];
     XCTAssertEqualObjects(target2, target, @"Applying delta gave wrong incremental result");
+}
+
+- (void) testFileBasedDelta {
+    NSData* delta = [_source zd_deltaTo: _target];
+    NSError* error;
+    BOOL ok = [NSData zd_applyDelta: delta
+                             toFile: [NSURL fileURLWithPath: _sourcePath]
+                      producingFile: [NSURL fileURLWithPath: @"/tmp/zdelta_tmp"]
+                              error: &error];
+    XCTAssert(ok);
+    NSData* result = [NSData dataWithContentsOfFile: @"/tmp/zdelta_tmp"];
+    XCTAssertEqualObjects(result, _target, @"Wrong target file contents");
 }
 
 - (void) testAdler {

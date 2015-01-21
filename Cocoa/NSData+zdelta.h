@@ -35,6 +35,16 @@ typedef BOOL (^ZDeltaOutputBlock)(const void* bytes, size_t length);
 - (BOOL) zd_applyDelta: (NSData*)delta
               onOutput: (ZDeltaOutputBlock)outputBlock;
 
+/** File-based delta applicator. Applies in-memory delta to a source file producing a target file.
+    This memory-maps the source file and streams the target file, so it's useable even with very
+    large files as long as there's enough free address space to map the source.
+    If the target file already exists, it will be overwritten.
+    If the operation fails, the target file will be deleted. */
++ (BOOL) zd_applyDelta: (NSData*)delta
+                toFile: (NSURL*)sourceFileURL
+         producingFile: (NSURL*)targetFileURL
+                 error: (NSError**)outError;
+
 /** Computes the 32-bit Adler checksum of the data. According to the zlib documentation,
     "An Adler-32 checksum is almost as reliable as a CRC32 but can be computed much faster."
     It's also much faster (and much smaller) than a SHA digest; but it's not safe against deliberate
