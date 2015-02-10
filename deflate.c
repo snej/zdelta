@@ -449,9 +449,9 @@ int ZEXPORT zd_deflateInit2_(strm, level, method, windowBits, memLevel,
   s->pending_buf = (uchf *) overlay;
   s->pending_buf_size = (ulg)s->lit_bufsize * (sizeof(ush)+2L);
 
-  if (s->ref_window  == ZD_NULL || s->prev        == ZD_NULL ||
-      s->head        == ZD_NULL || s->ref_prev    == ZD_NULL ||
-      s->ref_head    == ZD_NULL || s->pending_buf == ZD_NULL)
+  if (s->ref_window[0] == ZD_NULL || s->prev        == ZD_NULL ||
+      s->head          == ZD_NULL || s->ref_prev[0] == ZD_NULL ||
+      s->ref_head[0]   == ZD_NULL || s->pending_buf == ZD_NULL)
   {
     strm->msg = (char*)ERR_MSG(ZD_MEM_ERROR);
     zd_deflateEnd (strm);
