@@ -83,7 +83,7 @@
     if (!output.streamError) {
         success = [sourceData zd_applyDelta: delta onOutput: ^BOOL(const void *bytes, size_t length) {
             NSInteger written = [output write: bytes maxLength: length];
-            return (written == length);
+            return ((size_t)written == length);
         }];
     }
 

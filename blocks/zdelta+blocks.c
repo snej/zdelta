@@ -39,7 +39,7 @@ int ZEXPORT zd_compress_incr(const Bytef *ref, uLong rsize,
 
   strm.next_in  = (Bytef*) tar;
   strm.total_in = 0;
-  strm.avail_in = tsize;
+  strm.avail_in = (uInt)tsize;
 
   /* allocate the output buffer */
   uLong dbuf_size = tsize/EXPECTED_RATIO + 64;
@@ -52,7 +52,7 @@ int ZEXPORT zd_compress_incr(const Bytef *ref, uLong rsize,
   
   strm.next_out  = dbuf.pos;
   strm.total_out = 0;
-  strm.avail_out = dbuf.size;
+  strm.avail_out = (uInt)dbuf.size;
 
   strm.zalloc = (alloc_func)0;
   strm.zfree = (free_func)0;
@@ -81,7 +81,7 @@ int ZEXPORT zd_compress_incr(const Bytef *ref, uLong rsize,
 
     /* reset the output buffer */
     strm.next_out = dbuf.buffer;
-    strm.avail_out = dbuf.size;
+    strm.avail_out = (uInt)dbuf.size;
   }
 
   zd_free(&dbuf);
@@ -117,11 +117,11 @@ int ZEXPORT zd_uncompress_incr(const Bytef *ref, uLong rsize,
   if (zd_alloc(&tbuf, dbuf_size) == 0) {
     return ZD_MEM_ERROR;
   }
-  strm.avail_out = tbuf.size;
+  strm.avail_out = (uInt)tbuf.size;
   strm.next_out  = tbuf.buffer;
   strm.total_out = 0;
 
-  strm.avail_in = dsize;
+  strm.avail_in = (uInt)dsize;
   strm.next_in  = (Bytef*) delta;
   strm.total_in = 0;
 
@@ -149,7 +149,7 @@ int ZEXPORT zd_uncompress_incr(const Bytef *ref, uLong rsize,
 
     /* restore zstream internal pointer */
     strm.next_out = tbuf.buffer;
-    strm.avail_out = tbuf.size;
+    strm.avail_out = (uInt)tbuf.size;
   }
 
   zd_free(&tbuf);
