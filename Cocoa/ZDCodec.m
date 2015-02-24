@@ -16,6 +16,7 @@
 
 @implementation ZDCodec
 {
+    NSData* _source;
     zd_stream _strm;
     zd_mem_buffer _buf;
     BOOL _open;
@@ -30,14 +31,15 @@
 {
     self = [super init];
     if (self) {
-        _strm.base[0]       = (Bytef*)source.bytes;
-        _strm.base_avail[0] = source.length;
+        _source = source;
+        _strm.base[0]       = (Bytef*)_source.bytes;
+        _strm.base_avail[0] = _source.length;
         _strm.refnum        = 1;
         if (zd_alloc(&_buf, kBufferSize) == 0) {
             return nil;
         }
         _strm.next_out  = _buf.buffer;
-        _strm.avail_out = _buf.size;
+        _strm.avail_out = (uInt)_buf.size;
         _strm.total_out = 0;
         _compressing = compressing;
         int rval = compressing ? zd_deflateInit(&_strm,ZD_DEFAULT_COMPRESSION)
@@ -46,10 +48,6 @@
             return nil;
         _open = YES;
         _status = ZD_OK;
-
-        // The base data isn't needed anymore after initialization
-        _strm.base[0] = NULL;
-        _strm.base_avail[0] = 0;
     }
     return self;
 }
@@ -76,7 +74,7 @@
     if (!_open)
         return NO;
     _strm.next_in  = (Bytef*) bytes;
-    _strm.avail_in = length;
+    _strm.avail_in = (uInt)length;
     do {
         int rval;
         if (_compressing)
@@ -87,7 +85,7 @@
             // Output is full, so deliver it:
             onOutput(_buf.buffer, _buf.size - _strm.avail_out);
             _strm.next_out  = _buf.buffer;
-            _strm.avail_out = _buf.size;
+            _strm.avail_out = (uInt)_buf.size;
             if (rval == ZD_BUF_ERROR)
                 rval = ZD_OK;
         }
