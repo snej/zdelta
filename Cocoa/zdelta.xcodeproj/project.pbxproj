@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271D18391A9BEA0D001DDDB1 /* ZDCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 271D18371A9BEA0D001DDDB1 /* ZDCodec.h */; };
+		271D183A1A9BEA0D001DDDB1 /* ZDCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 271D18381A9BEA0D001DDDB1 /* ZDCodec.m */; };
 		27BDA863181CF95200F27A11 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA845181CF95200F27A11 /* adler32.c */; };
 		27BDA864181CF95200F27A11 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 27BDA846181CF95200F27A11 /* deflate.c */; };
 		27BDA865181CF95200F27A11 /* deflate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BDA847181CF95200F27A11 /* deflate.h */; };
@@ -132,6 +134,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		271D18371A9BEA0D001DDDB1 /* ZDCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCodec.h; sourceTree = "<group>"; };
+		271D18381A9BEA0D001DDDB1 /* ZDCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCodec.m; sourceTree = "<group>"; };
 		27BDA83B181CF83400F27A11 /* libzdelta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzdelta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDA845181CF95200F27A11 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
 		27BDA846181CF95200F27A11 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
@@ -315,6 +319,8 @@
 			children = (
 				27BDA8A1181CFBE400F27A11 /* NSData+zdelta.h */,
 				27BDA8A2181CFBE400F27A11 /* NSData+zdelta.m */,
+				271D18371A9BEA0D001DDDB1 /* ZDCodec.h */,
+				271D18381A9BEA0D001DDDB1 /* ZDCodec.m */,
 			);
 			name = "Cocoa API";
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				27BDA86C181CF95200F27A11 /* inffixed.h in Headers */,
 				27BDA873181CF95200F27A11 /* tailor.h in Headers */,
 				27BDA867181CF95200F27A11 /* infblock.h in Headers */,
+				271D18391A9BEA0D001DDDB1 /* ZDCodec.h in Headers */,
 				27BDA875181CF95200F27A11 /* trees.h in Headers */,
 				27BDA865181CF95200F27A11 /* deflate.h in Headers */,
 				27BDA8A3181CFBE400F27A11 /* NSData+zdelta.h in Headers */,
@@ -490,8 +497,9 @@
 		27BDA833181CF83400F27A11 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZD;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = zdelta;
+				ORGANIZATIONNAME = "Jens Alfke";
 				TargetAttributes = {
 					27E65922181DA4690039BDB5 = {
 						TestTargetID = 27BDA83A181CF83400F27A11;
@@ -549,6 +557,7 @@
 				27E6591D181D8E400039BDB5 /* zdelta+blocks.c in Sources */,
 				27BDA866181CF95200F27A11 /* infblock.c in Sources */,
 				27BDA870181CF95200F27A11 /* infutil.c in Sources */,
+				271D183A1A9BEA0D001DDDB1 /* ZDCodec.m in Sources */,
 				27BDA874181CF95200F27A11 /* trees.c in Sources */,
 				27BDA863181CF95200F27A11 /* adler32.c in Sources */,
 				27BDA86A181CF95200F27A11 /* inffast.c in Sources */,

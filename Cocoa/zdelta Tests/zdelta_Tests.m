@@ -7,6 +7,7 @@
 //
 
 #import "NSData+zdelta.h"
+#import "ZDCodec.h"
 #import "zdlib.h"
 #import <XCTest/XCTest.h>
 
@@ -131,6 +132,51 @@ static NSData* randomData(size_t length) {
     NSLog(@"Target checksum = %08X", targetChecksum);
     XCTAssertNotEqual(sourceChecksum, targetChecksum, @"Checksums shouldn't match");
     // (I guess theoretically there is a tiny chance they could match...)
+}
+
+- (void) testCodec {
+    NSData* source = randomData(200000);
+    NSData* target = randomData(200000);
+    NSMutableData* delta = [NSMutableData data];
+
+    NSLog(@"Compressing ...");
+    ZDCodec* codec = [[ZDCodec alloc] initWithSource: source compressing: YES];
+    XCTAssertNotNil(codec);
+    const char* targetBytes = target.bytes;
+    const size_t chunkSize = 35433; // I just made this up
+    for (size_t offset=0; YES; offset += chunkSize) {
+        size_t outLength = MIN(chunkSize, MAX(0, (ssize_t)target.length-(ssize_t)offset));
+        NSLog(@"Adding %lu bytes to codec...", outLength);
+        [codec addBytes: targetBytes+offset
+                 length: outLength
+               onOutput: ^(const void *out, size_t outLength) {
+                   NSLog(@"Codec produced %lu bytes", outLength);
+                   [delta appendBytes: out length: outLength];
+               }];
+        XCTAssertEqual(codec.status, ZDStatusOK);
+        if (outLength == 0)
+            break;
+    }
+    NSLog(@"Delta length = %u bytes", (unsigned)delta.length);
+
+    NSLog(@"Decompressing ...");
+    NSMutableData* target2 = [NSMutableData data];
+    codec = [[ZDCodec alloc] initWithSource: source compressing: NO];
+    XCTAssertNotNil(codec);
+    const char* deltaBytes = delta.bytes;
+    for (size_t offset=0; offset < target.length; offset += chunkSize) {
+        size_t outLength = MIN(chunkSize, delta.length-offset);
+        NSLog(@"Adding %lu bytes to codec...", outLength);
+        [codec addBytes: deltaBytes+offset
+                 length: outLength
+               onOutput: ^(const void *out, size_t outLength) {
+                   NSLog(@"Codec produced %lu bytes", outLength);
+                   [target2 appendBytes: out length: outLength];
+               }];
+        XCTAssertEqual(codec.status, ZDStatusOK);
+    }
+    NSLog(@"Recreated target length = %u bytes", (unsigned)target2.length);
+    XCTAssertEqualObjects(target2, target);
 }
 
 @end
