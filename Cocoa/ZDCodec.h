@@ -17,7 +17,8 @@ typedef enum : int {
     ZDStatusDataError = -3,
     ZDStatusMemError = -4,
     ZDStatusBufError = -5,
-    ZDStatusVersionError = -6
+    ZDStatusVersionError = -6,
+    ZDStatusReadPastEOF = -100  // not part of zdelta C API
 } ZDStatus;
 
 
@@ -41,8 +42,7 @@ typedef enum : int {
     When compressing, you must tell the codec the input is complete by calling it one more time
     with a length of zero. This will trigger it to output the remaining buffered data.
 
-    The return value is YES if the codec is still ready for more input, NO if it's not.
-    In the latter case, it's either reached EOF or an error; check the .status property. */
+    The return value is YES on success, NO on error. */
 - (BOOL) addBytes: (const void*)bytes
            length: (size_t)length
          onOutput: (void(^)(const void*,size_t))onOutput;

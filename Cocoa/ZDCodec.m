@@ -58,10 +58,13 @@
 
 - (BOOL) close {
     if (_open) {
+        int status;
         if (_compressing)
-            _status = zd_deflateEnd(&_strm);
+            status = zd_deflateEnd(&_strm);
         else
-            _status = zd_inflateEnd(&_strm);
+            status = zd_inflateEnd(&_strm);
+        if (_status >= ZD_OK)
+            _status = status;
         _open = NO;
     }
     zd_free(&_buf);
@@ -71,8 +74,13 @@
 - (BOOL) addBytes: (const void*)bytes length: (size_t)length
          onOutput: (void(^)(const void*,size_t))onOutput
 {
-    if (!_open)
+    if (!_open) {
+        if (length == 0)
+            return YES;
+        if (_status >= 0)
+            _status = ZDStatusReadPastEOF;
         return NO;
+    }
     _strm.next_in  = (Bytef*) bytes;
     _strm.avail_in = (uInt)length;
     do {
@@ -92,7 +100,7 @@
         if (rval != ZD_OK) {
             _status = rval;
             [self close];
-            return NO;
+            return rval == ZD_STREAM_END;
         }
     } while (_strm.avail_in > 0);
     return YES;
