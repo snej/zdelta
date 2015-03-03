@@ -8,19 +8,18 @@
 
 #import "ZDCodec.h"
 #import "zdlib.h"
-#import "zd_mem.h"
 
 
-#define kBufferSize (100*1024)
+#define kBufferSize (8*1024)
 
 
 @implementation ZDCodec
 {
     NSData* _source;
     zd_stream _strm;
-    zd_mem_buffer _buf;
     BOOL _open;
     BOOL _compressing;
+    uint8_t _buffer[kBufferSize];
 }
 
 @synthesize status=_status;
@@ -35,11 +34,8 @@
         _strm.base[0]       = (Bytef*)_source.bytes;
         _strm.base_avail[0] = _source.length;
         _strm.refnum        = 1;
-        if (zd_alloc(&_buf, kBufferSize) == 0) {
-            return nil;
-        }
-        _strm.next_out  = _buf.buffer;
-        _strm.avail_out = (uInt)_buf.size;
+        _strm.next_out  = _buffer;
+        _strm.avail_out = (uInt)kBufferSize;
         _strm.total_out = 0;
         _compressing = compressing;
         int rval = compressing ? zd_deflateInit(&_strm,ZD_DEFAULT_COMPRESSION)
@@ -52,7 +48,7 @@
     return self;
 }
 
-- (void)dealloc {
+- (void) dealloc {
     [self close];
 }
 
@@ -63,11 +59,10 @@
             status = zd_deflateEnd(&_strm);
         else
             status = zd_inflateEnd(&_strm);
-        if (_status >= ZD_OK)
+        if (_status < ZD_OK && _status >= ZD_OK)
             _status = status;
         _open = NO;
     }
-    zd_free(&_buf);
     return (_status >= ZD_OK);
 }
 
@@ -91,9 +86,9 @@
             rval = zd_inflate(&_strm, ZD_SYNC_FLUSH);
         if (rval == ZD_BUF_ERROR || rval == ZD_STREAM_END || length == 0) {
             // Output is full, so deliver it:
-            onOutput(_buf.buffer, _buf.size - _strm.avail_out);
-            _strm.next_out  = _buf.buffer;
-            _strm.avail_out = (uInt)_buf.size;
+            onOutput(_buffer, kBufferSize - _strm.avail_out);
+            _strm.next_out  = _buffer;
+            _strm.avail_out = (uInt)kBufferSize;
             if (rval == ZD_BUF_ERROR)
                 rval = ZD_OK;
         }
@@ -102,7 +97,7 @@
             [self close];
             return rval == ZD_STREAM_END;
         }
-    } while (_strm.avail_in > 0);
+    } while (_strm.avail_in > 0 || length == 0);
     return YES;
 }
 
